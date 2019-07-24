@@ -1,0 +1,269 @@
+enesozcan getting-started (master) $ mvn package -Pnative -Dnative-image.docker-build=true
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.acme:getting-started >----------------------
+[INFO] Building getting-started 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ getting-started ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/azcan/Desktop/quarkus/getting-started/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ getting-started ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ getting-started ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/azcan/Desktop/quarkus/getting-started/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ getting-started ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.1:test (default-test) @ getting-started ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ getting-started ---
+[INFO] Building jar: /Users/azcan/Desktop/quarkus/getting-started/target/getting-started-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- quarkus-maven-plugin:0.19.1:build (default) @ getting-started ---
+[INFO] [io.quarkus.deployment.QuarkusAugmentor] Beginning quarkus augmentation
+[INFO] [org.jboss.threads] JBoss Threads version 3.0.0.Beta4
+[INFO] [io.quarkus.deployment.QuarkusAugmentor] Quarkus augmentation completed in 3319ms
+[INFO] [io.quarkus.creator.phase.runnerjar.RunnerJarPhase] Building jar: /Users/azcan/Desktop/quarkus/getting-started/target/getting-started-1.0-SNAPSHOT-runner.jar
+[INFO] 
+[INFO] --- quarkus-maven-plugin:0.19.1:native-image (default) @ getting-started ---
+[INFO] [io.quarkus.creator.phase.nativeimage.NativeImagePhase] Running Quarkus native-image plugin on Java HotSpot(TM) 64-Bit Server VM
+[INFO] [io.quarkus.creator.phase.nativeimage.NativeImagePhase] docker run -v /Users/azcan/Desktop/quarkus/getting-started/target:/project:z --rm quay.io/quarkus/ubi-quarkus-native-image:19.0.2 -J-Djava.util.logging.manager=org.jboss.logmanager.LogManager --initialize-at-build-time= -H:InitialCollectionPolicy=com.oracle.svm.core.genscavenge.CollectionPolicy$BySpaceAndTime -jar getting-started-1.0-SNAPSHOT-runner.jar -J-Djava.util.concurrent.ForkJoinPool.common.parallelism=1 -H:FallbackThreshold=0 -H:+ReportExceptionStackTraces -H:+PrintAnalysisCallTree -H:-AddAllCharsets -H:EnableURLProtocols=http -H:-SpawnIsolates -H:-JNI --no-server -H:-UseServiceLoaderFeature -H:+StackTrace
+[getting-started-1.0-SNAPSHOT-runner:6]    classlist:  32,130.37 ms
+[getting-started-1.0-SNAPSHOT-runner:6]        (cap):   4,042.60 ms
+[getting-started-1.0-SNAPSHOT-runner:6]        setup:   8,538.25 ms
+07:05:41,287 INFO  [org.jbo.threads] JBoss Threads version 3.0.0.Beta4
+07:05:44,816 INFO  [org.xnio] XNIO version 3.7.2.Final
+07:05:45,889 INFO  [org.xni.nio] XNIO NIO Implementation Version 3.7.2.Final
+Warning: RecomputeFieldValue.FieldOffset automatic substitution failed. The automatic substitution registration was attempted because a call to sun.misc.Unsafe.objectFieldOffset(Field) was detected in the static initializer of io.quarkus.runtime.CleanableExecutor$Resetter. Detailed failure reason(s): The argument of Unsafe.objectFieldOffset(Field) is not a constant field., Could not determine the field where the value produced by the call to sun.misc.Unsafe.objectFieldOffset(Field) for the field offset computation is stored. The call is not directly followed by a field store or by a sign extend node followed directly by a field store. 
+Warning: RecomputeFieldValue.FieldOffset automatic substitution failed. The automatic substitution registration was attempted because a call to sun.misc.Unsafe.objectFieldOffset(Field) was detected in the static initializer of io.quarkus.runtime.CleanableExecutor$Resetter. Detailed failure reason(s): The argument of Unsafe.objectFieldOffset(Field) is not a constant field., Could not determine the field where the value produced by the call to sun.misc.Unsafe.objectFieldOffset(Field) for the field offset computation is stored. The call is not directly followed by a field store or by a sign extend node followed directly by a field store. 
+Warning: RecomputeFieldValue.FieldOffset automatic substitution failed. The automatic substitution registration was attempted because a call to sun.misc.Unsafe.objectFieldOffset(Field) was detected in the static initializer of org.jboss.threads.ThreadLocalResettingRunnable$Resetter. Detailed failure reason(s): The argument of Unsafe.objectFieldOffset(Field) is not a constant field., Could not determine the field where the value produced by the call to sun.misc.Unsafe.objectFieldOffset(Field) for the field offset computation is stored. The call is not directly followed by a field store or by a sign extend node followed directly by a field store. 
+Warning: RecomputeFieldValue.FieldOffset automatic substitution failed. The automatic substitution registration was attempted because a call to sun.misc.Unsafe.objectFieldOffset(Field) was detected in the static initializer of org.jboss.threads.ThreadLocalResettingRunnable$Resetter. Detailed failure reason(s): The argument of Unsafe.objectFieldOffset(Field) is not a constant field., Could not determine the field where the value produced by the call to sun.misc.Unsafe.objectFieldOffset(Field) for the field offset computation is stored. The call is not directly followed by a field store or by a sign extend node followed directly by a field store. 
+Warning: RecomputeFieldValue.ArrayBaseOffset automatic substitution failed. The automatic substitution registration was attempted because a call to sun.misc.Unsafe.arrayBaseOffset(Class) was detected in the static initializer of com.hazelcast.internal.memory.impl.UnsafeUtil. Detailed failure reason(s): Could not determine the field where the value produced by the call to sun.misc.Unsafe.arrayBaseOffset(Class) for the array base offset computation is stored. The call is not directly followed by a field store or by a sign extend node followed directly by a field store. 
+[getting-started-1.0-SNAPSHOT-runner:6]   (typeflow): 223,094.88 ms
+[getting-started-1.0-SNAPSHOT-runner:6]    (objects): 126,915.27 ms
+[getting-started-1.0-SNAPSHOT-runner:6]   (features):   9,366.02 ms
+[getting-started-1.0-SNAPSHOT-runner:6]     analysis: 387,789.57 ms
+Printing call tree to /project/reports/call_tree_getting-started-1.0-SNAPSHOT-runner_20190724_071329.txt
+Printing list of used classes to /project/reports/used_classes_getting-started-1.0-SNAPSHOT-runner_20190724_071352.txt
+Printing list of used packages to /project/reports/used_packages_getting-started-1.0-SNAPSHOT-runner_20190724_071353.txt
+[getting-started-1.0-SNAPSHOT-runner:6]     (clinit):   6,006.92 ms
+[getting-started-1.0-SNAPSHOT-runner:6]     universe:  30,555.94 ms
+Error: Unsupported features in 2 methods
+Detailed message:
+Error: Unsupported method com.hazelcast.util.ICMPHelper.isRawSocketPermitted0() is reachable: Native method. If you intend to use the Java Native Interface (JNI), specify -H:+JNI and see also -H:JNIConfigurationFiles=<path> (use -H:+PrintFlags for details)
+To diagnose the issue, you can add the option --report-unsupported-elements-at-runtime. The unsupported element is then reported at run time when it is accessed the first time.
+Call path from entry point to com.hazelcast.util.ICMPHelper.isRawSocketPermitted0(): 
+        at com.hazelcast.util.ICMPHelper.isRawSocketPermitted0(ICMPHelper.java)
+        at com.hazelcast.util.ICMPHelper.isRawSocketPermitted(ICMPHelper.java:45)
+        at com.hazelcast.client.connection.nio.ClientICMPManager.echoFailFast(ClientICMPManager.java:93)
+        at com.hazelcast.client.connection.nio.ClientICMPManager.<init>(ClientICMPManager.java:81)
+        at com.hazelcast.client.connection.nio.HeartbeatManager.<init>(HeartbeatManager.java:56)
+        at com.hazelcast.client.connection.nio.ClientConnectionManagerImpl.<init>(ClientConnectionManagerImpl.java:139)
+        at com.hazelcast.client.impl.clientside.DefaultClientConnectionManagerFactory.createConnectionManager(DefaultClientConnectionManagerFactory.java:29)
+        at com.hazelcast.client.impl.clientside.HazelcastClientInstanceImpl.<init>(HazelcastClientInstanceImpl.java:245)
+        at com.hazelcast.client.HazelcastClient.newHazelcastClientInternal(HazelcastClient.java:195)
+        at com.hazelcast.client.HazelcastClient.newHazelcastClient(HazelcastClient.java:132)
+        at org.acme.quickstart.HazelcastBean.createInstance(HazelcastBean.java:18)
+        at org.acme.quickstart.HazelcastBean_ProducerMethod_createInstance_ed75ad1c313ec6072a30b51e9e2ab3505c6de911_Bean.create(HazelcastBean_ProducerMethod_createInstance_ed75ad1c313ec6072a30b51e9e2ab3505c6de911_Bean.zig:167)
+        at org.acme.quickstart.HazelcastBean_ProducerMethod_createInstance_ed75ad1c313ec6072a30b51e9e2ab3505c6de911_Bean.create(HazelcastBean_ProducerMethod_createInstance_ed75ad1c313ec6072a30b51e9e2ab3505c6de911_Bean.zig:25)
+        at io.quarkus.undertow.runtime.HttpSessionContext.lambda$getContextualInstances$0(HttpSessionContext.java:131)
+        at io.quarkus.undertow.runtime.HttpSessionContext$$Lambda$447/86000772.apply(Unknown Source)
+        at io.quarkus.arc.ComputingCache$CacheFunction.lambda$apply$0(ComputingCache.java:99)
+        at io.quarkus.arc.ComputingCache$CacheFunction$$Lambda$249/620564170.get(Unknown Source)
+        at com.oracle.svm.core.jdk.SystemPropertiesSupport.initializeLazyValue(SystemPropertiesSupport.java:185)
+        at com.oracle.svm.core.jdk.SystemPropertiesSupport.setProperty(SystemPropertiesSupport.java:170)
+        at com.oracle.svm.core.jdk.Target_java_lang_System.setProperty(JavaLangSubstitutions.java:338)
+        at io.quarkus.runner.ApplicationImpl1.doStart(ApplicationImpl1.zig:33)
+        at io.quarkus.runtime.Application.start(Application.java:84)
+        at io.quarkus.runtime.Application.run(Application.java:196)
+        at io.quarkus.runner.GeneratedMain.main(GeneratedMain.zig:34)
+        at com.oracle.svm.core.JavaMainWrapper.run(JavaMainWrapper.java:153)
+        at com.oracle.svm.core.code.IsolateEnterStub.JavaMainWrapper_run_5087f5482cc9a6abc971913ece43acb471d2631b(generated:0)
+--------------------------------------------------------------------------------------------
+-- WARNING: The above stack trace is not a real stack trace, it is a theoretical call tree---
+-- If an interface has multiple implementations SVM will just display one potential call  ---
+-- path to the interface. This is often meaningless, and what you actually need to know is---
+-- the path to the constructor of the object that implements this interface.              ---
+-- Quarkus has attempted to generate a more meaningful call flow analysis below          ---
+---------------------------------------------------------------------------------------------
+
+
+Error: Unsupported method java.net.Inet4AddressImpl.isReachable0(byte[], int, byte[], int) is reachable: Native method. If you intend to use the Java Native Interface (JNI), specify -H:+JNI and see also -H:JNIConfigurationFiles=<path> (use -H:+PrintFlags for details)
+To diagnose the issue, you can add the option --report-unsupported-elements-at-runtime. The unsupported element is then reported at run time when it is accessed the first time.
+Call path from entry point to java.net.Inet4AddressImpl.isReachable0(byte[], int, byte[], int): 
+        at java.net.Inet4AddressImpl.isReachable0(Inet4AddressImpl.java)
+        at java.net.Inet4AddressImpl.isReachable(Inet4AddressImpl.java:70)
+        at java.net.InetAddress.isReachable(InetAddress.java:503)
+        at com.hazelcast.client.connection.nio.ClientICMPManager$PeriodicPingTask.doPing(ClientICMPManager.java:150)
+        at com.hazelcast.client.connection.nio.ClientICMPManager$PeriodicPingTask.run(ClientICMPManager.java:166)
+        at com.hazelcast.internal.networking.nio.iobalancer.IOBalancerThread.run(IOBalancerThread.java:71)
+        at com.oracle.svm.core.thread.JavaThreads.threadStartRoutine(JavaThreads.java:473)
+        at com.oracle.svm.core.posix.thread.PosixJavaThreads.pthreadStartRoutine(PosixJavaThreads.java:193)
+        at com.oracle.svm.core.code.IsolateEnterStub.PosixJavaThreads_pthreadStartRoutine_e1f4a8c0039f8337338252cd8734f63a79b5e3df(generated:0)
+--------------------------------------------------------------------------------------------
+-- WARNING: The above stack trace is not a real stack trace, it is a theoretical call tree---
+-- If an interface has multiple implementations SVM will just display one potential call  ---
+-- path to the interface. This is often meaningless, and what you actually need to know is---
+-- the path to the constructor of the object that implements this interface.              ---
+-- Quarkus has attempted to generate a more meaningful call flow analysis below          ---
+---------------------------------------------------------------------------------------------
+
+
+
+com.oracle.svm.core.util.UserError$UserException: Unsupported features in 2 methods
+Detailed message:
+Error: Unsupported method com.hazelcast.util.ICMPHelper.isRawSocketPermitted0() is reachable: Native method. If you intend to use the Java Native Interface (JNI), specify -H:+JNI and see also -H:JNIConfigurationFiles=<path> (use -H:+PrintFlags for details)
+To diagnose the issue, you can add the option --report-unsupported-elements-at-runtime. The unsupported element is then reported at run time when it is accessed the first time.
+Call path from entry point to com.hazelcast.util.ICMPHelper.isRawSocketPermitted0(): 
+        at com.hazelcast.util.ICMPHelper.isRawSocketPermitted0(ICMPHelper.java)
+        at com.hazelcast.util.ICMPHelper.isRawSocketPermitted(ICMPHelper.java:45)
+        at com.hazelcast.client.connection.nio.ClientICMPManager.echoFailFast(ClientICMPManager.java:93)
+        at com.hazelcast.client.connection.nio.ClientICMPManager.<init>(ClientICMPManager.java:81)
+        at com.hazelcast.client.connection.nio.HeartbeatManager.<init>(HeartbeatManager.java:56)
+        at com.hazelcast.client.connection.nio.ClientConnectionManagerImpl.<init>(ClientConnectionManagerImpl.java:139)
+        at com.hazelcast.client.impl.clientside.DefaultClientConnectionManagerFactory.createConnectionManager(DefaultClientConnectionManagerFactory.java:29)
+        at com.hazelcast.client.impl.clientside.HazelcastClientInstanceImpl.<init>(HazelcastClientInstanceImpl.java:245)
+        at com.hazelcast.client.HazelcastClient.newHazelcastClientInternal(HazelcastClient.java:195)
+        at com.hazelcast.client.HazelcastClient.newHazelcastClient(HazelcastClient.java:132)
+        at org.acme.quickstart.HazelcastBean.createInstance(HazelcastBean.java:18)
+        at org.acme.quickstart.HazelcastBean_ProducerMethod_createInstance_ed75ad1c313ec6072a30b51e9e2ab3505c6de911_Bean.create(HazelcastBean_ProducerMethod_createInstance_ed75ad1c313ec6072a30b51e9e2ab3505c6de911_Bean.zig:167)
+        at org.acme.quickstart.HazelcastBean_ProducerMethod_createInstance_ed75ad1c313ec6072a30b51e9e2ab3505c6de911_Bean.create(HazelcastBean_ProducerMethod_createInstance_ed75ad1c313ec6072a30b51e9e2ab3505c6de911_Bean.zig:25)
+        at io.quarkus.undertow.runtime.HttpSessionContext.lambda$getContextualInstances$0(HttpSessionContext.java:131)
+        at io.quarkus.undertow.runtime.HttpSessionContext$$Lambda$447/86000772.apply(Unknown Source)
+        at io.quarkus.arc.ComputingCache$CacheFunction.lambda$apply$0(ComputingCache.java:99)
+        at io.quarkus.arc.ComputingCache$CacheFunction$$Lambda$249/620564170.get(Unknown Source)
+        at com.oracle.svm.core.jdk.SystemPropertiesSupport.initializeLazyValue(SystemPropertiesSupport.java:185)
+        at com.oracle.svm.core.jdk.SystemPropertiesSupport.setProperty(SystemPropertiesSupport.java:170)
+        at com.oracle.svm.core.jdk.Target_java_lang_System.setProperty(JavaLangSubstitutions.java:338)
+        at io.quarkus.runner.ApplicationImpl1.doStart(ApplicationImpl1.zig:33)
+        at io.quarkus.runtime.Application.start(Application.java:84)
+        at io.quarkus.runtime.Application.run(Application.java:196)
+        at io.quarkus.runner.GeneratedMain.main(GeneratedMain.zig:34)
+        at com.oracle.svm.core.JavaMainWrapper.run(JavaMainWrapper.java:153)
+        at com.oracle.svm.core.code.IsolateEnterStub.JavaMainWrapper_run_5087f5482cc9a6abc971913ece43acb471d2631b(generated:0)
+--------------------------------------------------------------------------------------------
+-- WARNING: The above stack trace is not a real stack trace, it is a theoretical call tree---
+-- If an interface has multiple implementations SVM will just display one potential call  ---
+-- path to the interface. This is often meaningless, and what you actually need to know is---
+-- the path to the constructor of the object that implements this interface.              ---
+-- Quarkus has attempted to generate a more meaningful call flow analysis below          ---
+---------------------------------------------------------------------------------------------
+
+
+Error: Unsupported method java.net.Inet4AddressImpl.isReachable0(byte[], int, byte[], int) is reachable: Native method. If you intend to use the Java Native Interface (JNI), specify -H:+JNI and see also -H:JNIConfigurationFiles=<path> (use -H:+PrintFlags for details)
+To diagnose the issue, you can add the option --report-unsupported-elements-at-runtime. The unsupported element is then reported at run time when it is accessed the first time.
+Call path from entry point to java.net.Inet4AddressImpl.isReachable0(byte[], int, byte[], int): 
+        at java.net.Inet4AddressImpl.isReachable0(Inet4AddressImpl.java)
+        at java.net.Inet4AddressImpl.isReachable(Inet4AddressImpl.java:70)
+        at java.net.InetAddress.isReachable(InetAddress.java:503)
+        at com.hazelcast.client.connection.nio.ClientICMPManager$PeriodicPingTask.doPing(ClientICMPManager.java:150)
+        at com.hazelcast.client.connection.nio.ClientICMPManager$PeriodicPingTask.run(ClientICMPManager.java:166)
+        at com.hazelcast.internal.networking.nio.iobalancer.IOBalancerThread.run(IOBalancerThread.java:71)
+        at com.oracle.svm.core.thread.JavaThreads.threadStartRoutine(JavaThreads.java:473)
+        at com.oracle.svm.core.posix.thread.PosixJavaThreads.pthreadStartRoutine(PosixJavaThreads.java:193)
+        at com.oracle.svm.core.code.IsolateEnterStub.PosixJavaThreads_pthreadStartRoutine_e1f4a8c0039f8337338252cd8734f63a79b5e3df(generated:0)
+--------------------------------------------------------------------------------------------
+-- WARNING: The above stack trace is not a real stack trace, it is a theoretical call tree---
+-- If an interface has multiple implementations SVM will just display one potential call  ---
+-- path to the interface. This is often meaningless, and what you actually need to know is---
+-- the path to the constructor of the object that implements this interface.              ---
+-- Quarkus has attempted to generate a more meaningful call flow analysis below          ---
+---------------------------------------------------------------------------------------------
+
+
+
+        at com.oracle.svm.core.util.UserError.abort(UserError.java:75)
+        at com.oracle.svm.hosted.FallbackFeature.reportAsFallback(FallbackFeature.java:219)
+        at com.oracle.svm.hosted.NativeImageGenerator.doRun(NativeImageGenerator.java:578)
+        at com.oracle.svm.hosted.NativeImageGenerator.lambda$run$0(NativeImageGenerator.java:441)
+        at java.util.concurrent.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1386)
+        at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+        at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+        at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+        at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+Caused by: com.oracle.graal.pointsto.constraints.UnsupportedFeatureException: Unsupported features in 2 methods
+Detailed message:
+Error: Unsupported method com.hazelcast.util.ICMPHelper.isRawSocketPermitted0() is reachable: Native method. If you intend to use the Java Native Interface (JNI), specify -H:+JNI and see also -H:JNIConfigurationFiles=<path> (use -H:+PrintFlags for details)
+To diagnose the issue, you can add the option --report-unsupported-elements-at-runtime. The unsupported element is then reported at run time when it is accessed the first time.
+Call path from entry point to com.hazelcast.util.ICMPHelper.isRawSocketPermitted0(): 
+        at com.hazelcast.util.ICMPHelper.isRawSocketPermitted0(ICMPHelper.java)
+        at com.hazelcast.util.ICMPHelper.isRawSocketPermitted(ICMPHelper.java:45)
+        at com.hazelcast.client.connection.nio.ClientICMPManager.echoFailFast(ClientICMPManager.java:93)
+        at com.hazelcast.client.connection.nio.ClientICMPManager.<init>(ClientICMPManager.java:81)
+        at com.hazelcast.client.connection.nio.HeartbeatManager.<init>(HeartbeatManager.java:56)
+        at com.hazelcast.client.connection.nio.ClientConnectionManagerImpl.<init>(ClientConnectionManagerImpl.java:139)
+        at com.hazelcast.client.impl.clientside.DefaultClientConnectionManagerFactory.createConnectionManager(DefaultClientConnectionManagerFactory.java:29)
+        at com.hazelcast.client.impl.clientside.HazelcastClientInstanceImpl.<init>(HazelcastClientInstanceImpl.java:245)
+        at com.hazelcast.client.HazelcastClient.newHazelcastClientInternal(HazelcastClient.java:195)
+        at com.hazelcast.client.HazelcastClient.newHazelcastClient(HazelcastClient.java:132)
+        at org.acme.quickstart.HazelcastBean.createInstance(HazelcastBean.java:18)
+        at org.acme.quickstart.HazelcastBean_ProducerMethod_createInstance_ed75ad1c313ec6072a30b51e9e2ab3505c6de911_Bean.create(HazelcastBean_ProducerMethod_createInstance_ed75ad1c313ec6072a30b51e9e2ab3505c6de911_Bean.zig:167)
+        at org.acme.quickstart.HazelcastBean_ProducerMethod_createInstance_ed75ad1c313ec6072a30b51e9e2ab3505c6de911_Bean.create(HazelcastBean_ProducerMethod_createInstance_ed75ad1c313ec6072a30b51e9e2ab3505c6de911_Bean.zig:25)
+        at io.quarkus.undertow.runtime.HttpSessionContext.lambda$getContextualInstances$0(HttpSessionContext.java:131)
+        at io.quarkus.undertow.runtime.HttpSessionContext$$Lambda$447/86000772.apply(Unknown Source)
+        at io.quarkus.arc.ComputingCache$CacheFunction.lambda$apply$0(ComputingCache.java:99)
+        at io.quarkus.arc.ComputingCache$CacheFunction$$Lambda$249/620564170.get(Unknown Source)
+        at com.oracle.svm.core.jdk.SystemPropertiesSupport.initializeLazyValue(SystemPropertiesSupport.java:185)
+        at com.oracle.svm.core.jdk.SystemPropertiesSupport.setProperty(SystemPropertiesSupport.java:170)
+        at com.oracle.svm.core.jdk.Target_java_lang_System.setProperty(JavaLangSubstitutions.java:338)
+        at io.quarkus.runner.ApplicationImpl1.doStart(ApplicationImpl1.zig:33)
+        at io.quarkus.runtime.Application.start(Application.java:84)
+        at io.quarkus.runtime.Application.run(Application.java:196)
+        at io.quarkus.runner.GeneratedMain.main(GeneratedMain.zig:34)
+        at com.oracle.svm.core.JavaMainWrapper.run(JavaMainWrapper.java:153)
+        at com.oracle.svm.core.code.IsolateEnterStub.JavaMainWrapper_run_5087f5482cc9a6abc971913ece43acb471d2631b(generated:0)
+--------------------------------------------------------------------------------------------
+-- WARNING: The above stack trace is not a real stack trace, it is a theoretical call tree---
+-- If an interface has multiple implementations SVM will just display one potential call  ---
+-- path to the interface. This is often meaningless, and what you actually need to know is---
+-- the path to the constructor of the object that implements this interface.              ---
+-- Quarkus has attempted to generate a more meaningful call flow analysis below          ---
+---------------------------------------------------------------------------------------------
+
+
+Error: Unsupported method java.net.Inet4AddressImpl.isReachable0(byte[], int, byte[], int) is reachable: Native method. If you intend to use the Java Native Interface (JNI), specify -H:+JNI and see also -H:JNIConfigurationFiles=<path> (use -H:+PrintFlags for details)
+To diagnose the issue, you can add the option --report-unsupported-elements-at-runtime. The unsupported element is then reported at run time when it is accessed the first time.
+Call path from entry point to java.net.Inet4AddressImpl.isReachable0(byte[], int, byte[], int): 
+        at java.net.Inet4AddressImpl.isReachable0(Inet4AddressImpl.java)
+        at java.net.Inet4AddressImpl.isReachable(Inet4AddressImpl.java:70)
+        at java.net.InetAddress.isReachable(InetAddress.java:503)
+        at com.hazelcast.client.connection.nio.ClientICMPManager$PeriodicPingTask.doPing(ClientICMPManager.java:150)
+        at com.hazelcast.client.connection.nio.ClientICMPManager$PeriodicPingTask.run(ClientICMPManager.java:166)
+        at com.hazelcast.internal.networking.nio.iobalancer.IOBalancerThread.run(IOBalancerThread.java:71)
+        at com.oracle.svm.core.thread.JavaThreads.threadStartRoutine(JavaThreads.java:473)
+        at com.oracle.svm.core.posix.thread.PosixJavaThreads.pthreadStartRoutine(PosixJavaThreads.java:193)
+        at com.oracle.svm.core.code.IsolateEnterStub.PosixJavaThreads_pthreadStartRoutine_e1f4a8c0039f8337338252cd8734f63a79b5e3df(generated:0)
+--------------------------------------------------------------------------------------------
+-- WARNING: The above stack trace is not a real stack trace, it is a theoretical call tree---
+-- If an interface has multiple implementations SVM will just display one potential call  ---
+-- path to the interface. This is often meaningless, and what you actually need to know is---
+-- the path to the constructor of the object that implements this interface.              ---
+-- Quarkus has attempted to generate a more meaningful call flow analysis below          ---
+---------------------------------------------------------------------------------------------
+
+
+
+        at com.oracle.graal.pointsto.constraints.UnsupportedFeatures.report(UnsupportedFeatures.java:133)
+        at com.oracle.svm.hosted.NativeImageGenerator.doRun(NativeImageGenerator.java:576)
+        ... 6 more
+Error: Image build request failed with exit status 1
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  09:50 min
+[INFO] Finished at: 2019-07-24T10:14:28+03:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal io.quarkus:quarkus-maven-plugin:0.19.1:native-image (default) on project getting-started: Failed to generate a native image: Failed to build native image: Image generation failed -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+enesozcan getting-started $ 

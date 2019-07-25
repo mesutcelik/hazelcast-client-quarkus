@@ -14,10 +14,8 @@ See prerequisites here: https://quarkus.io/guides/building-native-image-guide
 Docker must be running
 
 --------
-Here is where we get errors:   
 
 > $ mvn package -Pnative -Dnative-image.docker-build=true
-
 
 ------------------------------------
 

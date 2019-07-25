@@ -94,7 +94,9 @@
                   <goal>native-image</goal>
                 </goals>
                 <configuration>
+                  <reportErrorsAtRuntime>true</reportErrorsAtRuntime>
                   <enableHttpUrlHandler>true</enableHttpUrlHandler>
+                  <enableJni>true</enableJni>
                 </configuration>
               </execution>
             </executions>
